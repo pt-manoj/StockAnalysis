@@ -69,6 +69,9 @@ async function poll() {
 
 app.get('*', (req, res) => {
  res.send("server is running");
+  res.sendFile('../index.html', (err) => {
+    if (err) res.status(404).send('Client build not found');
+  });
 });
 
 httpServer.listen(PORT, () => {
