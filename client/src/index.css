@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.trend-up {
+  @apply text-green-600;
+}
+
+.trend-down {
+  @apply text-red-600;
+}
+
+.nifty-banner {
+  @apply bg-gradient-to-r from-blue-600 to-blue-800 text-white sticky top-0 z-50;
+}
+
+.sector-card {
+  @apply bg-white rounded-lg shadow-md px-3 py-2 hover:shadow-lg transition-shadow cursor-pointer;
+}
+
+.stock-table {
+  @apply w-full border-collapse;
+}
+
+.stock-row {
+  @apply border-b hover:bg-gray-50 transition-colors;
+}
