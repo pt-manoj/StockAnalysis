@@ -66,6 +66,11 @@ async function poll() {
   pollTimer = setTimeout(poll, POLL_MS);
 }
 */
+
+app.get('*', (req, res) => {
+ res.send("server is running");
+});
+
 httpServer.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
   poll();
