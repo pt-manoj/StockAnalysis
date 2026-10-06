@@ -11,7 +11,7 @@ dotenv.config();
 
 const PORT = process.env.PORT || 5000;
 const CLIENT_URL = process.env.CLIENT_URL;
-const CLIENT_DIST = process.env.CLIENT_DIST || path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../client/dist');
+const CLIENT_DIST = process.env.CLIENT_DIST || path.resolve(path.dirname(fileURLToPath(import.meta.url)), '');
 
 const app = express();
 app.set('trust proxy', 1);
