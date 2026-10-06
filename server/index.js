@@ -9,18 +9,15 @@ import { fetchAndBroadcastData, getLatest, isSector, watchSector, unwatchSector 
 
 dotenv.config();
 
-console.log('Server listening on port');
-
 const PORT = process.env.PORT || 5000;
 const CLIENT_URL = process.env.CLIENT_URL;
 const CLIENT_DIST = process.env.CLIENT_DIST || path.resolve(path.dirname(fileURLToPath(import.meta.url)), '');
-
 
 const app = express();
 app.set('trust proxy', 1);
 const httpServer = createServer(app);
 
-const corsOptions = CLIENT_URL ? { origin: CLIENT_URL.split(','), methods: ['GET', 'POST'] } : undefined;
+/*const corsOptions = CLIENT_URL ? { origin: CLIENT_URL.split(','), methods: ['GET', 'POST'] } : undefined;
 const io = new Server(httpServer, { cors: corsOptions });
 if (corsOptions) app.use(cors(corsOptions));
 
@@ -68,7 +65,7 @@ async function poll() {
   }
   pollTimer = setTimeout(poll, POLL_MS);
 }
-
+*/
 httpServer.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
   poll();
