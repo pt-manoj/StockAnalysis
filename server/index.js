@@ -51,8 +51,10 @@ app.get('*', (req, res) => {
   res.setHeader('Cache-Control', 'no-cache');
   res.sendFile(path.join(CLIENT_DIST, 'index.html'), (err) => {
     if (err) 
+    {
       console.log(`URL Path ${CLIENT_DIST}`);
       res.status(404).send('Client build not found test');
+    }
   });
 });
 
