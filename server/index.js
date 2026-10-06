@@ -13,6 +13,7 @@ const PORT = process.env.PORT || 5000;
 const CLIENT_URL = process.env.CLIENT_URL;
 const CLIENT_DIST = process.env.CLIENT_DIST || path.resolve(path.dirname(fileURLToPath(import.meta.url)), '');
 
+console.log(`Server listening on port ${PORT}`);
 const app = express();
 app.set('trust proxy', 1);
 const httpServer = createServer(app);
@@ -50,11 +51,7 @@ app.use(express.static(CLIENT_DIST, { index: false, maxAge: '1h' }));
 app.get('*', (req, res) => {
   res.setHeader('Cache-Control', 'no-cache');
   res.sendFile(path.join(CLIENT_DIST, 'index.html'), (err) => {
-    if (err) 
-    {
-      console.log(`URL Path ${CLIENT_DIST}`);
-      res.status(404).send('Client build not found test');
-    }
+    if (err) res.status(404).send('Client build not found');
   });
 });
 
