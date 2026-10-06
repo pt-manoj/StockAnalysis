@@ -17,7 +17,7 @@ const app = express();
 app.set('trust proxy', 1);
 const httpServer = createServer(app);
 
-/*const corsOptions = CLIENT_URL ? { origin: CLIENT_URL.split(','), methods: ['GET', 'POST'] } : undefined;
+const corsOptions = CLIENT_URL ? { origin: CLIENT_URL.split(','), methods: ['GET', 'POST'] } : undefined;
 const io = new Server(httpServer, { cors: corsOptions });
 if (corsOptions) app.use(cors(corsOptions));
 
@@ -50,7 +50,7 @@ app.use(express.static(CLIENT_DIST, { index: false, maxAge: '1h' }));
 app.get('*', (req, res) => {
   res.setHeader('Cache-Control', 'no-cache');
   res.sendFile(path.join(CLIENT_DIST, 'index.html'), (err) => {
-    if (err) res.status(404).send('Client build not found');
+    if (err) res.status(404).send('Client build not found' + CLIENT_DIST);
   });
 });
 
@@ -65,14 +65,6 @@ async function poll() {
   }
   pollTimer = setTimeout(poll, POLL_MS);
 }
-*/
-
-app.get('*', (req, res) => {
- //res.send("server is running");
-  res.sendFile('../../index.html', (err) => {
-    if (err) res.status(404).send('Client build not found');
-  });
-});
 
 httpServer.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
