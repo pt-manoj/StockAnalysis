@@ -9,11 +9,11 @@
   "routes": [
     {
       "src": "/services/(.*)",
-      "dest": "services/dataService.js"
+      "dest": "../client/dist/index.html"
     },
     {
       "src": "/(.*)",
-      "dest": "services/dataService.js"
+      "dest": "../client/dist/index.html"
     }
   ],
   "env": {
