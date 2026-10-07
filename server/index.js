@@ -9,6 +9,8 @@ import { fetchAndBroadcastData, getLatest, isSector, watchSector, unwatchSector 
 
 dotenv.config();
 
+console.log("Testing " + fileURLToPath(import.meta.url));
+
 const PORT = process.env.PORT || 5000;
 const CLIENT_URL = process.env.CLIENT_URL;
 const CLIENT_DIST = process.env.CLIENT_DIST || path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../client/dist');
