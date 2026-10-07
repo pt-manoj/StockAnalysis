@@ -8,8 +8,8 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "/"
+      "src": "/services/(.*)",
+      "dest": "services/dataService.js"
     }
   ],
   "env": {
