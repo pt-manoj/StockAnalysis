@@ -9,7 +9,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "services/dataService.js"
+      "dest": "./services/dataService.js"
     }
   ],
   "env": {
