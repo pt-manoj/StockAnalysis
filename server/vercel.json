@@ -8,12 +8,8 @@
   ],
   "routes": [
     {
-      "src": "/services/(.*)",
-      "dest": "../client/dist/index.html"
-    },
-    {
       "src": "/(.*)",
-      "dest": "../client/dist/index.html"
+      "dest": "./index.js"
     }
   ],
   "env": {
